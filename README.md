@@ -25,7 +25,8 @@ EasyRPをちょっと便利にします。
 3. settingフォルダにiniファイルを置くことで、iniの選択リストへ反映されます。
 4. iniの選択リストは更新ボタンを押すことで最新の情報になります。
 5. STARTをクリックすることでconfig.iniを書き換え、EasyRPを最小化した状態で起動します。
-6. 起動オプションを付けることで、各種設定を自動化できます。
+6. NoAlertにチェックを付けると、EasyRPを起動したお知らせを出さないようにできます。
+7. 起動オプションを付けることで、各種設定を自動化できます。
 
 ### 起動オプション
 - `"/ini file.ini"`  
@@ -36,6 +37,8 @@ EasyRPをちょっと便利にします。
   StartTimestampのチェックを外した状態で起動できます。
 - `/AutoClose`  
   AutoCloseのチェックを外した状態で起動できます。
+- `/NoAlert`  
+  NoAlertのチェックを付けた状態で起動できます。
 
 #### 起動オプションの例
 - `"C:\EasyRP-windows\EasyRP-LittleUseful.exe" "/ini test.ini" /Start`  
