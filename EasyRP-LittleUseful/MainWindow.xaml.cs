@@ -35,6 +35,7 @@ namespace EasyRP_LittleUseful
             FileListBox.SelectedItem = commandLine.GetFileName().Replace("_", "__");
             StartTimestamp.IsChecked = !commandLine.IsStartTimestampe();
             AutoClose.IsChecked = !commandLine.IsAutoClose();
+            NoAlert.IsChecked = commandLine.IsNoAlert();
             if (commandLine.IsStart()) StartEasyRP();
         }
         private void ReloadButtonClick(object sender, RoutedEventArgs e)
@@ -114,7 +115,7 @@ namespace EasyRP_LittleUseful
             proc.StartInfo.FileName = easyrpPath;
             proc.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
             proc.Start();
-            MessageBox.Show("easyrp.exeを起動しました。");
+            if (NoAlert.IsChecked == false) MessageBox.Show("easyrp.exeを起動しました。");
             if (AutoClose.IsChecked == true) this.Close();
         }
     }

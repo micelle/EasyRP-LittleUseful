@@ -20,8 +20,8 @@
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="5*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="6*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -43,6 +43,13 @@
             x:Name="AutoClose"
             Content="AutoClose"
             IsChecked="True"
+            Margin="10"
+        />
+        <CheckBox
+            Grid.Row="0"
+            Grid.Column="0"
+            x:Name="NoAlert"
+            Content="NoAlert"
             Margin="10"
             VerticalAlignment="Bottom"
         />
@@ -74,7 +81,7 @@
             Grid.Column="0"
             Grid.ColumnSpan="2"
             Click="StartButtonClick"
-            Margin="10"
+            Margin="10 5"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             >
             START

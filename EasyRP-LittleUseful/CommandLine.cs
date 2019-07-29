@@ -6,12 +6,14 @@ public class CommandLine
     private readonly bool Start;
     private readonly bool StartTimestamp;
     private readonly bool AutoClose;
+    private readonly bool NoAlert;
     public CommandLine(string[] cmds)
     {
         fileName = "config.ini";
         Start = false;
         StartTimestamp = false;
         AutoClose = false;
+        NoAlert = false;
         foreach (string cmd in cmds)
         {
             if (Regex.IsMatch(cmd, @"^/ini\s+(\S+\.ini)$"))
@@ -22,6 +24,7 @@ public class CommandLine
             if (cmd == @"/Start") this.Start = true;
             if (cmd == @"/StartTimestamp") this.StartTimestamp = true;
             if (cmd == @"/AutoClose") this.AutoClose = true;
+            if (cmd == @"/NoAlert") this.NoAlert = true;
         }
     }
     public string GetFileName()
@@ -39,5 +42,9 @@ public class CommandLine
     public bool IsAutoClose()
     {
         return this.AutoClose;
+    }
+    public bool IsNoAlert()
+    {
+        return this.NoAlert;
     }
 }
